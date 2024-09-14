@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <style>
+    .popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+</head>
+<body>
+    <h1>Select a Country</h1>
+    <select id="countrySelect">
+        <option value="" disabled selected>Select a country</option>
+        <option value="India">India</option>
+        <option value="United States">United States</option>
+        <option value="Canada">Canada</option>
+        <option value="Australia">Australia</option>
+        <option value="Germany">Germany</option>
+    </select>
+
+    <div id="popup" class="popup">
+        <p id="popupText"></p>
+        <button id="closePopup">Close</button>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#countrySelect').change(function() {
+                var selectedCountry = $(this).val();
+                $('#popupText').text("You selected: " + selectedCountry);
+                $('#popup').fadeIn();
+            });
+
+            $('#closePopup').click(function() {
+                $('#popup').fadeOut();
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>
